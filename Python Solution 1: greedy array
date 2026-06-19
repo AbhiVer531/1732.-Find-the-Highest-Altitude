@@ -1,0 +1,10 @@
+class Solution:
+    def largestAltitude(self, gain: List[int]) -> int:
+        array = [0]
+        for idx in range(len(gain)):
+            array.append(array[idx]+gain[idx])
+        max = 0
+        for height in array:
+            if max < height:
+                max = height
+        return max
